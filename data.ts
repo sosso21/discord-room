@@ -1,500 +1,454 @@
-import { Colors } from "discord.js";
+import { Colors } from 'discord.js';
 
-export const languagesRoles = [
+export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
+export const ignoreCategory = ['ignorecategory'];
+
+interface LanguageRoleType {
+  name: string;
+  color: any;
+  unicodeEmoji: string;
+  hoist: boolean;
+  mentionable: boolean;
+  room?: string[];
+  hasCategory: boolean;
+}
+
+export const languagesRoles: LanguageRoleType[] = [
   // language role
+
   {
-    name: "français",
+    name: 'français',
     color: Colors.Blue,
-    unicodeEmoji: ":flag_fr:",
+    unicodeEmoji: ':flag_fr:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
-    hasCategory: true,
-  },
-
-  {
-    name: "english",
-    color: Colors.Green,
-    unicodeEmoji: ":flag_gb:",
-    hoist: true,
-    mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "dutch",
-    color: Colors.Orange,
-    unicodeEmoji: ":flag_nl:",
-    hoist: true,
-    mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
-    hasCategory: true,
-  },
-  {
-    name: "español",
+    name: 'english',
     color: Colors.Red,
-    unicodeEmoji: ":flag_es:",
+    unicodeEmoji: ':flag_gb:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "deutsch",
+    name: 'dutch',
+    color: Colors.Orange,
+    unicodeEmoji: ':flag_nl:',
+    hoist: true,
+    mentionable: true,
+    hasCategory: true,
+  },
+  {
+    name: 'español',
+    color: Colors.Red,
+    unicodeEmoji: ':flag_es:',
+    hoist: true,
+    mentionable: true,
+    hasCategory: true,
+  },
+  {
+    name: 'deutsch',
     color: Colors.DarkRed,
-    unicodeEmoji: ":flag_de:",
+    unicodeEmoji: ':flag_de:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "italiano",
+    name: 'italiano',
     color: Colors.White,
-    unicodeEmoji: ":flag_it:",
+    unicodeEmoji: ':flag_it:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "português",
+    name: 'português',
     color: Colors.Green,
-    unicodeEmoji: ":flag_pt:",
+    unicodeEmoji: ':flag_pt:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "русский",
+    name: 'русский',
     color: Colors.Red,
-    unicodeEmoji: ":flag_ru:",
+    unicodeEmoji: ':flag_ru:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "日本語",
+    name: '日本語',
     color: Colors.Red,
-    unicodeEmoji: ":flag_jp:",
+    unicodeEmoji: ':flag_jp:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "中文",
+    name: '中文',
     color: Colors.Gold,
-    unicodeEmoji: ":flag_cn:",
+    unicodeEmoji: ':flag_cn:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "한국어",
+    name: '한국어',
     color: Colors.DarkBlue,
-    unicodeEmoji: ":flag_kr:",
+    unicodeEmoji: ':flag_kr:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "العربية",
+    name: 'العربية',
     color: Colors.DarkGreen,
-    unicodeEmoji: ":flag_sa:",
+    unicodeEmoji: ':flag_sa:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "हिन्दी",
+    name: 'हिन्दी',
     color: Colors.Orange,
-    unicodeEmoji: ":flag_in:",
+    unicodeEmoji: ':flag_in:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "ਪੰਜਾਬੀ",
+    name: 'ਪੰਜਾਬੀ',
     color: Colors.DarkOrange,
-    unicodeEmoji: ":flag_pk:",
+    unicodeEmoji: ':flag_pk:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "اردو",
+    name: 'اردو',
     color: Colors.DarkGreen,
-    unicodeEmoji: ":flag_pk:",
+    unicodeEmoji: ':flag_pk:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "فارسی",
+    name: 'فارسی',
     color: Colors.Gold,
-    unicodeEmoji: ":flag_ir:",
+    unicodeEmoji: ':flag_ir:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "ไทย",
+    name: 'ไทย',
     color: Colors.DarkRed,
-    unicodeEmoji: ":flag_th:",
+    unicodeEmoji: ':flag_th:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "tiếng Việt",
+    name: 'tiếng Việt',
     color: Colors.DarkGreen,
-    unicodeEmoji: ":flag_vn:",
+    unicodeEmoji: ':flag_vn:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "Bahasa Indonesia",
+    name: 'Bahasa Indonesia',
     color: Colors.DarkAqua,
-    unicodeEmoji: ":flag_id:",
+    unicodeEmoji: ':flag_id:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "Türkçe",
+    name: 'Türkçe',
     color: Colors.Red,
-    unicodeEmoji: ":flag_tr:",
+    unicodeEmoji: ':flag_tr:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
-
   {
-    name: "עברית",
+    name: 'עברית',
     color: Colors.DarkGold,
-    unicodeEmoji: ":flag_il:",
+    unicodeEmoji: ':flag_il:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
-  // divertissement  role s
 
-  // divertissement  role s
+  // divertissement  roles
 
   {
-    name: "developer",
+    name: 'developer',
     color: Colors.Purple,
-    unicodeEmoji: ":computer:",
+    unicodeEmoji: ':computer:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
-  {
-    name: "Gammer",
-    color: Colors.Red,
-    unicodeEmoji: ":art:",
-    hoist: true,
-    mentionable: true,
 
-    hasArtistCategory: false,
-    hasGamerCategory: true,
-    hasCategory: true,
-  },
   {
-    name: "drawer",
+    name: 'drawer',
     color: Colors.Gold,
-    unicodeEmoji: ":art:",
+    unicodeEmoji: ':art:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: true,
-    hasGamerCategory: false,
+    room: ['Artist'],
     hasCategory: false,
   },
   {
-    name: "DJ",
+    name: 'DJ',
     color: Colors.Purple,
-    unicodeEmoji: ":art:",
+    unicodeEmoji: ':art:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: true,
-    hasGamerCategory: false,
+    room: ['Artist'],
     hasCategory: false,
   },
   {
-    name: "Artist",
+    name: 'Artist',
     color: Colors.Purple,
-    unicodeEmoji: ":art:",
+    unicodeEmoji: ':art:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: true,
-    hasGamerCategory: false,
+    room: [],
     hasCategory: true,
   },
   {
-    name: "memes",
+    name: 'memes',
     color: Colors.Yellow,
-    unicodeEmoji: ":joy:",
+    unicodeEmoji: ':joy:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: false,
   },
 
   {
-    name: "photograph",
+    name: 'photograph',
     color: Colors.Green,
-    unicodeEmoji: ":mortar_board:",
+    unicodeEmoji: ':mortar_board:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: true,
-    hasGamerCategory: false,
+    room: ['Artist'],
     hasCategory: false,
   },
 
   {
-    name: "singer",
+    name: 'singer',
     color: Colors.Blue,
-    unicodeEmoji: ":mortar_board:",
+    unicodeEmoji: ':mortar_board:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: true,
-    hasGamerCategory: false,
+    room: ['Artist'],
     hasCategory: false,
   },
 
   {
-    name: "student",
+    name: 'student',
     color: Colors.Blue,
-    unicodeEmoji: ":mortar_board:",
+    unicodeEmoji: ':mortar_board:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: true,
   },
   {
-    name: "video maker",
+    name: 'video maker',
     color: Colors.Red,
-    unicodeEmoji: ":clapper:",
+    unicodeEmoji: ':clapper:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: true,
-    hasGamerCategory: false,
+    room: ['Artist'],
     hasCategory: false,
   },
   {
-    name: "movie buff",
+    name: 'movie buff',
     color: Colors.DarkPurple,
-    unicodeEmoji: ":clapper:",
+    unicodeEmoji: ':clapper:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
     hasCategory: false,
   },
   {
-    name: "athlete",
+    name: 'athlete',
     color: Colors.Orange,
-    unicodeEmoji: ":sports_medal:",
+    unicodeEmoji: ':sports_medal:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: false,
+    room: [],
     hasCategory: false,
   },
   // gaming roles
 
   {
-    name: "minecraft player",
+    name: 'Gaming',
     color: Colors.Red,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: [],
+    hasCategory: true,
+  },
+  {
+    name: 'minecraft player',
+    color: Colors.Red,
+    unicodeEmoji: ':video_game:',
+    hoist: true,
+    mentionable: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "fps player",
+    name: 'fps player',
     color: Colors.Blue,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "fifa player",
+    name: 'fifa player',
     color: Colors.Green,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "monster hunter player",
+    name: 'monster hunter player',
     color: Colors.Orange,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "pokemon player",
+    name: 'pokemon player',
     color: Colors.Yellow,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "strategy player",
+    name: 'strategy player',
     color: Colors.Purple,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "pvp player",
+    name: 'pvp player',
     color: Colors.Red,
-    unicodeEmoji: ":video_game:",
+    unicodeEmoji: ':video_game:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "chess player",
+    name: 'chess player',
     color: Colors.White,
-    unicodeEmoji: ":chess_pawn:",
+    unicodeEmoji: ':chess_pawn:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "poker player",
+    name: 'poker player',
     color: Colors.Green,
-    unicodeEmoji: ":spades:",
+    unicodeEmoji: ':spades:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "sudoku player",
+    name: 'sudoku player',
     color: Colors.Blue,
-    unicodeEmoji: ":pencil2:",
+    unicodeEmoji: ':pencil2:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
   {
-    name: "scrabble player",
+    name: 'scrabble player',
     color: Colors.Yellow,
-    unicodeEmoji: ":abc:",
+    unicodeEmoji: ':abc:',
     hoist: true,
     mentionable: true,
-
-    hasArtistCategory: false,
-    hasGamerCategory: true,
+    room: ['Gaming'],
     hasCategory: false,
   },
+  //  sexes role s
+
+  {
+    name: 'Male',
+    color: Colors.Blue,
+    unicodeEmoji: ':male_sign:',
+    hoist: true,
+    mentionable: true,
+    room: [],
+    hasCategory: false,
+  },
+
+  {
+    name: 'female',
+    color: Colors.DarkVividPink,
+    unicodeEmoji: ':female_sign:',
+    hoist: true,
+    mentionable: true,
+    room: [],
+    hasCategory: false,
+  },
+  {
+    name: 'LGBT',
+    color: Colors.DarkPurple,
+    unicodeEmoji: ':rainbow_flag:',
+    hoist: true,
+    mentionable: true,
+    room: [],
+    hasCategory: true,
+  },
+];
+
+export const categories = [
+  {
+    name: 'General',
+    allowViewChanel: ['Male', 'female', 'LGBT'],
+    denyViewChanel: ['@everyone'],
+  },
+
+  ...languagesRoles
+    .filter((role) => !!role.hasCategory)
+    .map((role) => {
+      return {
+        name: role.name,
+        allowViewChanel: [
+          ...languagesRoles
+            .filter((languageRole) =>
+              (languageRole.room ?? []).includes(role.name),
+            )
+            ?.map((role) => role.name),
+          role.name,
+        ],
+        denyViewChanel: ['@everyone'],
+      };
+    }),
 ];

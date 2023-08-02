@@ -1,21 +1,47 @@
-interface arrayToMessageContentProps {
+import { ChannelType } from 'discord.js';
+const twoToTen = [2, 5, 10];
+const zeroToFive = [1, 2, 3, 4];
+
+interface roomProps {
   name: string;
-  id: string;
-  permission: string;
+  type: any;
+  parent?: string | number;
+  rateLimitPerUser?: number;
 }
 
-export const arrayToMessageContent = (
-  array: arrayToMessageContentProps[]
-): string => {
-  // Create the message content
-  let messageContent = "Here is the content of myArray:```js \n\n";
+const vocalRoom = (name: string, num: number): roomProps[] => {
+  return zeroToFive.map((number) => {
+    return {
+      name: `${name} • ${num}.${number}`,
+      type: ChannelType.GuildVoice,
+      userLimit: num,
+    };
+  });
+};
 
-  for (const item of array ?? []) {
-    messageContent += `Name: ${item.name}\nID: ${
-      item.id
-    }\nPermission: ${item?.permission?.toString()}\n\n`;
-  }
-  messageContent += "```";
-  // Send the message
-  return messageContent;
+export const getRooms = ({
+  name,
+  parent_id,
+}: {
+  name: string;
+  parent_id: string | number;
+}): roomProps[] => {
+  const voiceChat: roomProps[] = [];
+
+  twoToTen.forEach((number) => {
+    [...vocalRoom(name, number)].forEach((room) => voiceChat.push(room));
+  });
+
+  return [
+    {
+      name: `💬 ${name} chat`,
+      type: ChannelType.GuildText,
+    },
+    {
+      name: `😂 ${name} memes`,
+      type: ChannelType.GuildText,
+    },
+
+    ...voiceChat,
+  ].map((channel) => ({ ...channel, parent: parent_id }));
 };
