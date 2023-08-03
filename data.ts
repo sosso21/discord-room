@@ -1,11 +1,19 @@
 import { Colors } from 'discord.js';
 
 export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
-export const ignoreCategory = ['ignorecategory'];
+export const ignoreCategory = [
+  'ignorecategory',
+  'ɢᴇɴᴇʀᴀʟ-ʀᴜʟᴇꜱ',
+  'admins-only',
+  '👋・welcome',
+  'forum-discussion',
+  '🚀✨・𝐵𝒰𝑀𝒫',
+  'La Chambre des Secrets',
+];
 
 interface LanguageRoleType {
   name: string;
-  color: any;
+  color: number;
   unicodeEmoji: string;
   hoist: boolean;
   mentionable: boolean;
@@ -15,6 +23,15 @@ interface LanguageRoleType {
 
 export const languagesRoles: LanguageRoleType[] = [
   // language role
+
+  {
+    name: 'ⵜⴰⵎⴰⵣⵉⵖⵜ',
+    color: Colors.Blue,
+    unicodeEmoji: ':tamazight_flag:',
+    hoist: true,
+    mentionable: true,
+    hasCategory: true,
+  },
 
   {
     name: 'français',

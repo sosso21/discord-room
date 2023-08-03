@@ -4,7 +4,7 @@ const zeroToFive = [1, 2, 3, 4];
 
 interface roomProps {
   name: string;
-  type: any;
+  type: ChannelType;
   parent?: string | number;
   rateLimitPerUser?: number;
 }
