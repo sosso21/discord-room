@@ -3,11 +3,14 @@ import { Colors } from 'discord.js';
 export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
 export const ignoreCategory = [
   'ignorecategory',
+  'advertisements',
   'ɢᴇɴᴇʀᴀʟ-ʀᴜʟᴇꜱ',
   'admins-only',
   '👋・welcome',
   'forum-discussion',
   '🚀✨・𝐵𝒰𝑀𝒫',
+  '🐧github',
+  '📹pictures',
   'La Chambre des Secrets',
 ];
 
