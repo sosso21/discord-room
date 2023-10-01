@@ -3,11 +3,14 @@ import { Colors } from 'discord.js';
 export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
 export const ignoreCategory = [
   'ignorecategory',
+  'advertisements',
   'ɢᴇɴᴇʀᴀʟ-ʀᴜʟᴇꜱ',
   'admins-only',
   '👋・welcome',
   'forum-discussion',
   '🚀✨・𝐵𝒰𝑀𝒫',
+  '🐧github',
+  '📹pictures',
   'La Chambre des Secrets',
 ];
 
@@ -19,6 +22,7 @@ interface LanguageRoleType {
   mentionable: boolean;
   room?: string[];
   hasCategory: boolean;
+  haveAccessAllVoiceChanel?: Boolean;
 }
 
 export const languagesRoles: LanguageRoleType[] = [
@@ -31,6 +35,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
 
   {
@@ -40,6 +45,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'english',
@@ -48,6 +54,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'dutch',
@@ -56,6 +63,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'español',
@@ -64,6 +72,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'deutsch',
@@ -72,6 +81,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'italiano',
@@ -80,6 +90,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'português',
@@ -88,6 +99,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'русский',
@@ -96,6 +108,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: '日本語',
@@ -104,6 +117,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: '中文',
@@ -112,6 +126,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: '한국어',
@@ -120,6 +135,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'العربية',
@@ -128,6 +144,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'हिन्दी',
@@ -136,6 +153,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'ਪੰਜਾਬੀ',
@@ -144,6 +162,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'اردو',
@@ -152,6 +171,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'فارسی',
@@ -160,6 +180,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'ไทย',
@@ -168,6 +189,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'tiếng Việt',
@@ -176,6 +198,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'Bahasa Indonesia',
@@ -184,6 +207,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'Türkçe',
@@ -192,6 +216,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'עברית',
@@ -200,6 +225,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
 
   // divertissement  roles
@@ -211,6 +237,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
 
   {
@@ -221,6 +248,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Artist'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'DJ',
@@ -230,6 +258,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Artist'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'Artist',
@@ -239,6 +268,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: [],
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'memes',
@@ -247,6 +277,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
 
   {
@@ -257,6 +288,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Artist'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
 
   {
@@ -267,6 +299,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Artist'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
 
   {
@@ -276,6 +309,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'video maker',
@@ -285,6 +319,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Artist'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'movie buff',
@@ -293,6 +328,7 @@ export const languagesRoles: LanguageRoleType[] = [
     hoist: true,
     mentionable: true,
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'athlete',
@@ -302,6 +338,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: [],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   // gaming roles
 
@@ -313,6 +350,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: [],
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'minecraft player',
@@ -322,6 +360,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'fps player',
@@ -331,6 +370,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'fifa player',
@@ -340,6 +380,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'monster hunter player',
@@ -349,6 +390,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'pokemon player',
@@ -358,6 +400,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'strategy player',
@@ -367,6 +410,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'pvp player',
@@ -376,6 +420,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'chess player',
@@ -385,6 +430,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'poker player',
@@ -394,6 +440,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'sudoku player',
@@ -403,6 +450,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'scrabble player',
@@ -412,6 +460,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: ['Gaming'],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   //  sexes role s
 
@@ -423,6 +472,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: [],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
 
   {
@@ -433,6 +483,7 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: [],
     hasCategory: false,
+    haveAccessAllVoiceChanel: false,
   },
   {
     name: 'LGBT',
@@ -442,6 +493,17 @@ export const languagesRoles: LanguageRoleType[] = [
     mentionable: true,
     room: [],
     hasCategory: true,
+    haveAccessAllVoiceChanel: false,
+  },
+  {
+    name: 'see-all-vices-chanels',
+    color: Colors.DarkBlue,
+    unicodeEmoji: ':fire:',
+    hoist: true,
+    mentionable: true,
+    room: [],
+    hasCategory: false,
+    haveAccessAllVoiceChanel: true,
   },
 ];
 
@@ -459,9 +521,12 @@ export const categories = [
         name: role.name,
         allowViewChanel: [
           ...languagesRoles
-            .filter((languageRole) =>
-              (languageRole.room ?? []).includes(role.name),
-            )
+            .filter((languageRole) => {
+              return (
+                !!languageRole?.haveAccessAllVoiceChanel ||
+                (languageRole.room ?? []).includes(role.name)
+              );
+            })
             ?.map((role) => role.name),
           role.name,
         ],

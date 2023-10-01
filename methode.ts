@@ -1,6 +1,6 @@
 import { ChannelType } from 'discord.js';
-const twoToTen = [2, 5, 10];
-const zeroToFive = [1, 2, 3, 4];
+const twoToTen = [3, 5, 99];
+const zeroToFive = [1, 2, 3];
 
 interface roomProps {
   name: string;
