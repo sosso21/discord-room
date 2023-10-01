@@ -137,6 +137,17 @@ export const languagesRoles: LanguageRoleType[] = [
     hasCategory: true,
     haveAccessAllVoiceChanel: false,
   },
+
+  {
+    name: 'Darija',
+    color: Colors.Red,
+    unicodeEmoji: ':flag_dz:',
+    hoist: true,
+    mentionable: true,
+    hasCategory: true,
+    haveAccessAllVoiceChanel: false,
+  },
+
   {
     name: 'العربية',
     color: Colors.DarkGreen,
