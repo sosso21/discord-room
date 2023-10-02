@@ -44,6 +44,7 @@ const main = async () => {
       description: 'Creates new categories in the server',
     },
     { name: 'create-rooms', description: 'Creates new rooms in the server' },
+    { name: 'send-message', description: 'Send Messages to users' },
   ];
 
   const rest = new REST({ version: '10' }).setToken(TOKEN);
