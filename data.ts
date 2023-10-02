@@ -1,6 +1,7 @@
 import { Colors } from 'discord.js';
 
 export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
+
 export const ignoreCategory = [
   'ignorecategory',
   'advertisements',
