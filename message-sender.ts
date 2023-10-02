@@ -72,15 +72,22 @@ const main = async () => {
               ?.name ?? 'another server';
           const user = await client.users.fetch(dbUser.id_discord);
 
-          user.send(`Hi ${
+          await user.send(`Hi ${
             user.globalName
           }, after having had the opportunity to know you on ${server_name.toLowerCase()}, and recognizing that you are a good member and a good person, we would like to invite you to join our new language server. Here, you can find a wide choice of languages to practice and many people with whom you can socialize and share your passions.
           https://discord.gg/4ujkjz4gae`);
+        } catch {
+          console.log('====================');
+          console.log('dbUser:', dbUser);
+          console.log(
+            `!! see the profile on : https://discord.com/users/${dbUser.id_discord}`,
+          );
 
-          await User.update(dbUser.id, {
-            applied: true,
-          });
-        } catch {}
+          console.log('====================');
+        }
+        await User.update(dbUser.id, {
+          applied: true,
+        });
       });
 
       await interaction.reply(
