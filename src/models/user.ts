@@ -26,6 +26,9 @@ export class User extends BaseEntity {
   @Column({ default: false })
   applied: boolean;
 
+  @Column({ default: false })
+  sent: boolean;
+
   @CreateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',

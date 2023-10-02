@@ -58,7 +58,7 @@ const main = async () => {
     if (interaction.commandName === 'send-message') {
       const users = await User.find({
         where: {
-          // id_discord: '626081773901709331',
+          //   id_discord: '559044789983772677',
           applied: false,
         },
       });
@@ -66,6 +66,7 @@ const main = async () => {
       const servers = await Server.find();
 
       users.forEach(async (dbUser) => {
+        let sent = false;
         try {
           const server_name =
             servers.find((server) => dbUser.found_in == server.id_discord)
@@ -76,8 +77,11 @@ const main = async () => {
             user.globalName
           }, after having had the opportunity to know you on ${server_name.toLowerCase()}, and recognizing that you are a good member and a good person, we would like to invite you to join our new language server. Here, you can find a wide choice of languages to practice and many people with whom you can socialize and share your passions.
           https://discord.gg/4ujkjz4gae`);
-        } catch {
+          sent = true;
+        } catch (e) {
+          sent = false;
           console.log('====================');
+          console.log('e:', e);
           console.log('dbUser:', dbUser);
           console.log(
             `!! see the profile on : https://discord.com/users/${dbUser.id_discord}`,
@@ -87,6 +91,7 @@ const main = async () => {
         }
         await User.update(dbUser.id, {
           applied: true,
+          sent: sent,
         });
       });
 
