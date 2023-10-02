@@ -1,6 +1,7 @@
 import { Colors } from 'discord.js';
 
 export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
+
 export const ignoreCategory = [
   'ignorecategory',
   'advertisements',
@@ -507,7 +508,7 @@ export const languagesRoles: LanguageRoleType[] = [
     haveAccessAllVoiceChanel: false,
   },
   {
-    name: 'see-all-vices-chanels',
+    name: 'see-all-voice-rooms',
     color: Colors.DarkBlue,
     unicodeEmoji: ':fire:',
     hoist: true,
