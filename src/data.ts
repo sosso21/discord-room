@@ -1,6 +1,11 @@
 import { Colors } from 'discord.js';
 
-export const ignoreRole = ['�️PRINCIPAL', 'admin-server'];
+export const ignoreRole = [
+  '�️PRINCIPAL',
+  'admin-server',
+  'Tickets Support',
+  'Tickets Admin',
+];
 
 export const ignoreCategory = [
   'ignorecategory',
@@ -12,6 +17,8 @@ export const ignoreCategory = [
   '🚀✨・𝐵𝒰𝑀𝒫',
   '🐧github',
   '📹pictures',
+  'report-support',
+  'transcripts',
   'La Chambre des Secrets',
 ];
 
@@ -23,7 +30,7 @@ interface LanguageRoleType {
   mentionable: boolean;
   room?: string[];
   hasCategory: boolean;
-  haveAccessAllVoiceChanel?: Boolean;
+  haveAccessAllVoiceChanel?: boolean;
 }
 
 export const languagesRoles: LanguageRoleType[] = [
