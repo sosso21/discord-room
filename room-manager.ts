@@ -1,3 +1,4 @@
+import { DataSource } from 'typeorm';
 import {
   ChannelType,
   Client,
@@ -8,12 +9,17 @@ import {
   Routes,
 } from 'discord.js';
 import * as dotenv from 'dotenv';
-import { ignoreRole, languagesRoles, categories, ignoreCategory } from './data';
-import { getRooms } from './methode';
+import {
+  ignoreRole,
+  languagesRoles,
+  categories,
+  ignoreCategory,
+} from './src/data';
+import { getRooms } from './src/methode';
 
 dotenv.config();
 
-const TOKEN = process.env.DISCORD_API_BOT_TOKEN as any;
+const TOKEN = process.env.DataSourceISCORD_API_BOT_TOKEN as any;
 
 const CLIENT_ID = process.env.DISCORD_APPLICATION_ID as any;
 
@@ -44,7 +50,6 @@ const main = async () => {
       description: 'Creates new categories in the server',
     },
     { name: 'create-rooms', description: 'Creates new rooms in the server' },
-    { name: 'send-message', description: 'Send Messages to users' },
   ];
 
   const rest = new REST({ version: '10' }).setToken(TOKEN);
