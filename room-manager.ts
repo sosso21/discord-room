@@ -19,7 +19,7 @@ import { getRooms } from './src/methode';
 
 dotenv.config();
 
-const TOKEN = process.env.DataSourceISCORD_API_BOT_TOKEN as any;
+const TOKEN = process.env.DISCORD_API_BOT_TOKEN as any;
 
 const CLIENT_ID = process.env.DISCORD_APPLICATION_ID as any;
 
