@@ -1,11 +1,10 @@
-import { DataSource } from 'typeorm';
 import {
   ChannelType,
   Client,
   GatewayIntentBits,
   PermissionFlagsBits,
-  PermissionsBitField,
   REST,
+  RoleCreateOptions,
   Routes,
 } from 'discord.js';
 import * as dotenv from 'dotenv';
@@ -119,18 +118,34 @@ const main = async () => {
     if (interaction.commandName === 'create-roles') {
       const guild = interaction.guild;
       // Delete a role
-      languagesRoles.map((role) => {
-        // Create a new role with data and a reason
-        guild?.roles
-          .create({
-            name: role.name,
+      const guildRoles: RoleCreateOptions[] = [];
+
+      for (let index = 0; index < languagesRoles.length; index++) {
+        const role = languagesRoles[index];
+
+        guildRoles.push({
+          name: role.name,
+          color: role.color,
+          // unicodeEmoji: role.unicodeEmoji,
+          hoist: role.hoist,
+          mentionable: role.mentionable,
+          permissions: [],
+        });
+
+        if (role.haveTeacher === true) {
+          guildRoles.push({
+            name: `Teacher - ${role.name}`,
             color: role.color,
             // unicodeEmoji: role.unicodeEmoji,
             hoist: role.hoist,
             mentionable: role.mentionable,
-          })
-          .then(console.log)
-          .catch(console.error);
+          });
+        }
+      }
+
+      guildRoles.map(async (role) => {
+        // Create a new role with data and a reason
+        await guild?.roles.create(role).then(console.log).catch(console.error);
       });
 
       await interaction.reply(
@@ -209,26 +224,37 @@ const main = async () => {
       let count = 0;
       const guild = interaction.guild;
       // create a categories
-      const rolesInServer = guild?.roles.cache;
 
-      const categoriesInServer = guild?.channels.cache
+      guild?.channels.cache
         ?.filter(
           (channel) =>
             channel.type === ChannelType.GuildCategory &&
             categories.map((category) => category.name).includes(channel.name),
         )
         .map((channel) => {
-          console.log(getRooms({ parent_id: channel.id, name: channel.name }));
-          getRooms({ parent_id: channel.id, name: channel.name }).forEach(
-            (room) => {
-              count++;
-              try {
-                guild.channels.create(room as any);
-              } catch (error) {
-                console.error('error: ', error);
-              }
-            },
+          console.log(
+            getRooms({
+              parent_id: channel.id,
+              name: channel.name,
+              haveTeacher:
+                languagesRoles.find((lr) => lr.name == channel.name)
+                  ?.haveTeacher ?? false,
+            }),
           );
+          getRooms({
+            parent_id: channel.id,
+            name: channel.name,
+            haveTeacher:
+              languagesRoles.find((lr) => lr.name == channel.name)
+                ?.haveTeacher ?? false,
+          }).forEach((room) => {
+            count++;
+            try {
+              guild.channels.create(room as any);
+            } catch (error) {
+              console.error('error: ', error);
+            }
+          });
         });
 
       await interaction.reply(`we create ${count} rooms`);
