@@ -280,7 +280,6 @@ export const languagesRoles: LanguageRoleType[] = [
     hasCategory: true,
     haveAccessAllVoiceChanel: false,
   },
-
   {
     name: 'drawer',
     color: Colors.Gold,
