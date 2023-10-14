@@ -11,20 +11,29 @@ interface roomProps {
 
 const vocalRoom = (name: string, num: number): roomProps[] => {
   return zeroToFive.map((number) => {
-    return {
-      name: `${name} • ${num}.${number}`,
-      type: ChannelType.GuildVoice,
-      userLimit: num,
-    };
+    if (num == 99) {
+      return {
+        name: `${name} • ∞ - ${number}`,
+        type: ChannelType.GuildVoice,
+      };
+    } else {
+      return {
+        name: `${name} • ${num}.${number}`,
+        type: ChannelType.GuildVoice,
+        userLimit: num,
+      };
+    }
   });
 };
 
 export const getRooms = ({
   name,
   parent_id,
+  haveTeacher,
 }: {
   name: string;
   parent_id: string | number;
+  haveTeacher: boolean;
 }): roomProps[] => {
   const voiceChat: roomProps[] = [];
 
@@ -32,7 +41,16 @@ export const getRooms = ({
     [...vocalRoom(name, number)].forEach((room) => voiceChat.push(room));
   });
 
+  const classRoom: roomProps[] = [];
+
+  if (haveTeacher) {
+    classRoom.push({
+      name: `🏫 ${name} • classroom`,
+      type: ChannelType.GuildStageVoice,
+    });
+  }
   return [
+    ...classRoom,
     {
       name: `💬 ${name} chat`,
       type: ChannelType.GuildText,
