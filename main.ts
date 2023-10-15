@@ -120,6 +120,11 @@ const main = async () => {
       // Delete a role
       const guildRoles: RoleCreateOptions[] = [];
 
+      const rolesList = guild?.roles.cache
+        .filter((role) => !ignoreRole.includes(role.name))
+
+        ?.map((role) => role.name);
+
       for (let index = 0; index < languagesRoles.length; index++) {
         const role = languagesRoles[index];
 
@@ -143,15 +148,14 @@ const main = async () => {
         }
       }
 
-      guildRoles.map(async (role) => {
+      const roleData = guildRoles.filter((gr) => !rolesList.includes(gr.name));
+      roleData.map(async (role) => {
         // Create a new role with data and a reason
         await guild?.roles.create(role).then(console.log).catch(console.error);
       });
 
       await interaction.reply(
-        `we create ${(guild?.roles.cache as any)?.length}/${
-          languagesRoles.length
-        }`,
+        `we create ${roleData?.length}/${languagesRoles.length}`,
       );
     }
 
