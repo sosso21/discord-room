@@ -12,6 +12,7 @@ export const ignoreCategory = [
   'advertisements',
   'ɢᴇɴᴇʀᴀʟ-ʀᴜʟᴇꜱ',
   '🛡️moderation-logs',
+  'only-mutted',
   'admins-only',
   '👋・welcome',
   'forum-discussion',
