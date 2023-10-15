@@ -12,8 +12,8 @@ export const ignoreCategory = [
   'advertisements',
   'ɢᴇɴᴇʀᴀʟ-ʀᴜʟᴇꜱ',
   '🛡️moderation-logs',
-  'only-mutted',
-  'admins-only',
+  '🔇muted-only',
+  '👑admins-only',
   '👋・welcome',
   'forum-discussion',
   '🚀✨・𝐵𝒰𝑀𝒫',
@@ -22,6 +22,9 @@ export const ignoreCategory = [
   'report-support',
   'transcripts',
   'La Chambre des Secrets',
+  'TEMPVOICE CATEGORY',
+  '✨・interface',
+  '➕ Creator Channel',
 ];
 
 interface LanguageRoleType {
