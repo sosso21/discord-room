@@ -11,7 +11,7 @@ export const ignoreCategory = [
   'ignorecategory',
   'advertisements',
   'ɢᴇɴᴇʀᴀʟ-ʀᴜʟᴇꜱ',
-  '🛡️moderation-logs',
+  '👀moderation-logs',
   '🔇muted-only',
   '👑admins-only',
   '👋・welcome',

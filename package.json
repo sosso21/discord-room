@@ -4,7 +4,7 @@
   "description": "",
   "main": "room-manager.ts",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "nodemon main.ts",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
